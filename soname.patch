@@ -1,0 +1,15 @@
+diff --git a/lib/c-api/build.rs b/lib/c-api/build.rs
+index 01ec70e0f..db2090ab1 100644
+--- a/lib/c-api/build.rs
++++ b/lib/c-api/build.rs
+@@ -76,6 +76,10 @@ fn main() {
+ 
+     build_wasm_c_api_headers(&crate_dir, &out_dir);
+     build_inline_c_env_vars();
++
++    if cfg!(target_os = "linux") {
++        println!("cargo:rustc-cdylib-link-arg=-Wl,-soname,libwasmer.so");
++    }
+ }
+ 
+ /// Check whether we should build the C API headers or set `inline-c` up.

@@ -1,0 +1,36 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 035e283a0..14ff0bd0d 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1083,15 +1083,15 @@ dependencies = [
+ 
+ [[package]]
+ name = "llvm-sys"
+-version = "110.0.1"
++version = "100.2.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "21ede189444b8c78907e5d36da5dabcf153170fcff9c1dba48afc4b33c7e19f0"
++checksum = "15d9c00ce56221b2150e2d4d51887ff139fce5a0e50346c744861d1e66d2f7c4"
+ dependencies = [
+  "cc",
+  "lazy_static",
+  "libc",
+  "regex",
+- "semver 0.11.0",
++ "semver 0.9.0",
+ ]
+ 
+ [[package]]
+diff --git a/lib/compiler-llvm/Cargo.toml b/lib/compiler-llvm/Cargo.toml
+index 5168ce2d0..9ccde0f46 100644
+--- a/lib/compiler-llvm/Cargo.toml
++++ b/lib/compiler-llvm/Cargo.toml
+@@ -28,7 +28,7 @@ loupe = "0.1"
+ package = "wasmer_inkwell"
+ version = "0.2.0-alpha.2"
+ default-features = false
+-features = ["llvm11-0", "target-x86", "target-aarch64"]
++features = ["llvm10-0", "target-x86", "target-aarch64"]
+ 
+ [build-dependencies]
+ cc = "1.0"
